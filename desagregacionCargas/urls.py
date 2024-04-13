@@ -17,8 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from .views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('desagregacion/',include('desagregacionCargas.urls',namespace="desagregacion"),name="desagregacion")
+    path('cargaArchivos/',index,name="inicial")
 ]
