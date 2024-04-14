@@ -20,5 +20,6 @@ from django.urls import include
 from .views import *
 app_name = 'desagregacionCargas'
 urlpatterns = [
-    path('cargaArchivos/',index,name="inicial")
+    path('upload',index,name="inicial"),
+    path('consumo',index,name="consumo"),
 ]

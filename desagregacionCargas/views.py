@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from .custom_def.Limpiezadedatos import *
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from .models import Desagregacion
 import random
 import numpy as np
+from django.http import JsonResponse
 from desagregacionCargas.models import *
 
-# Create your views here.
 
+# Create your views here.
+@csrf_exempt
 def index(request):
   wats = [random.randint(120,2000) for i in range(60)]
   date = [4.20+i for i in range(60)]
@@ -58,3 +61,13 @@ def index(request):
       desagregacion.refrigerator = inicial[7]
       desagregacion.save()
   return render(request,'index.html',{})
+
+def consumo(request):
+  if request.method == "POST":
+    desagregacion = Desagregacion.objects.all()
+    
+    dict = [{
+      'name':'Lavadora',
+      'title':'HACEB',
+      'valor':
+    }]
