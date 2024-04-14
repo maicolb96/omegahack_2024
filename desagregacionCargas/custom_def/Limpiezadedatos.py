@@ -5,6 +5,7 @@ import os
 import numpy as np
 
 def obtener_valor_inicial(valor_objetivo,ruta):
+    valor_objetivo = float(valor_objetivo)
     df = pd.read_csv(ruta)
     df['Diferencia'] = abs(df['Medidor [W]'] - valor_objetivo)
     valor_cercano = df.loc[df['Diferencia'].idxmin()]
@@ -39,6 +40,7 @@ def aletoriedad(array):
     return array[i][j]
 # Entrada
 def combinaciones(wats,sound_system,tv,play,oven,computer,clothes_iron,clothes_wash,refrigerator):
+    wats = float(wats)
     combinaciones = []
     for i in range(2000):
         combinaciones.append([aletoriedad(sound_system),aletoriedad(tv),aletoriedad(play),aletoriedad(oven),aletoriedad(computer),aletoriedad(clothes_iron),aletoriedad(clothes_wash),aletoriedad(refrigerator)])
