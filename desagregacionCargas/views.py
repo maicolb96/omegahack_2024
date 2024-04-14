@@ -61,13 +61,3 @@ def index(request):
       desagregacion.refrigerator = inicial[7]
       desagregacion.save()
   return render(request,'index.html',{})
-
-def consumo(request):
-  if request.method == "POST":
-    desagregacion = Desagregacion.objects.all()
-    
-    dict = [{
-      'name':'Lavadora',
-      'title':'HACEB',
-      'valor':
-    }]
