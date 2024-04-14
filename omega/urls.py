@@ -20,5 +20,5 @@ from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('desagregacion/',include('desagregacionCargas.urls',namespace="desagregacion"),name="desagregacion")
+    path('api/',include('desagregacionCargas.urls',namespace="desagregacion"),name="desagregacion")
 ]
